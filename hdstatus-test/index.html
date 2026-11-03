@@ -23,6 +23,8 @@ button:disabled{opacity:.5}
 #pct{font-size:13px;color:var(--mut);text-align:right;margin-top:4px}
 video{width:100%;border-radius:12px;background:#000;max-height:60vh}
 #info{font-size:13px;color:var(--mut);margin:10px 0 14px}
+.lbl{display:block;font-size:13px;color:var(--mut);margin-bottom:6px}
+select{width:100%;padding:12px;border-radius:10px;border:1px solid var(--mut);background:var(--bg);color:var(--fg);font-size:15px;margin-bottom:12px}
 .hint{font-size:13px;color:var(--mut)}
 </style>
 </head>
@@ -32,6 +34,13 @@ video{width:100%;border-radius:12px;background:#000;max-height:60vh}
 <p class="sub">Видео обрабатывается прямо на телефоне, никуда не загружается.</p>
 <div class="card">
   <input id="file" type="file" accept="video/*" hidden>
+  <label class="lbl" for="mode">Режим</label>
+  <select id="mode">
+    <option value="pure">1 · Как ПюрСтатус (30 к/с, 3,8 Мбит/с)</option>
+    <option value="b8">2 · 30 к/с, 8 Мбит/с</option>
+    <option value="f60">3 · Кадры как в исходнике, 3,8 Мбит/с</option>
+    <option value="bot">4 · Как в боте (кадры как в исходнике, 10 Мбит/с)</option>
+  </select>
   <button id="pick">Выбрать видео</button>
   <div id="status">Выберите видео из галереи</div>
   <div id="progress" hidden><div class="track"><div id="bar"></div></div><div id="pct">0%</div></div>
